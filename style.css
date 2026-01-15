@@ -1,0 +1,585 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    perspective: 2000px;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.flip-button {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+    transition: all 0.3s ease;
+}
+
+.flip-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+.print-button {
+    background: white;
+    color: #10b981;
+    border: 2px solid #10b981;
+    padding: 12px 30px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+
+.print-button:hover {
+    background: #10b981;
+    color: white;
+}
+
+.flip-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 800px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-container.flipped {
+    transform: rotateY(180deg);
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    backface-visibility: hidden;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    padding: 50px;
+}
+
+.page-back {
+    transform: rotateY(180deg);
+}
+
+/* Header avec photo */
+.cv-header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid #10b981;
+}
+
+.photo-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0;
+}
+
+.photo-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981, #059669);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+    border: 5px solid white;
+}
+
+.photo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.header-info {
+    flex: 1;
+}
+
+.cv-header h1 {
+    color: #1f2937;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.cv-header h2 {
+    color: #10b981;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Sections */
+.section {
+    margin-bottom: 35px;
+}
+
+.section h3 {
+    color: #10b981;
+    font-size: 22px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #d1fae5;
+}
+
+.section p {
+    color: #4b5563;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.experience-item {
+    margin-bottom: 25px;
+}
+
+.experience-item h4 {
+    color: #1f2937;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.experience-item .meta {
+    color: #10b981;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.experience-item ul {
+    margin-left: 20px;
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+.experience-item ul li {
+    margin-bottom: 8px;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.skill-item {
+    background: #f0fdf4;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #10b981;
+}
+
+.skill-item strong {
+    color: #10b981;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.skill-item span {
+    color: #4b5563;
+    font-size: 14px;
+}
+
+/* Portfolio Section */
+.portfolio-section {
+    background: #f9fafb;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.portfolio-section h3 {
+    color: #10b981;
+    margin-bottom: 20px;
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.screenshot-item {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.screenshot-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.screenshot-item p {
+    font-size: 13px;
+    color: #6b7280;
+    text-align: center;
+    margin: 0;
+}
+
+/* Lettre */
+.letter-header {
+    margin-bottom: 40px;
+}
+
+.letter-header h1 {
+    color: #1f2937;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.letter-date {
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.letter-content p {
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.letter-signature {
+    margin-top: 40px;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+/* Modal pour images */
+
+.modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .controls,
+    .flip-button,
+    .print-button {
+        display: none;
+    }
+
+    .flip-container {
+        transform: none !important;
+    }
+
+    .page {
+        box-shadow: none;
+        page-break-after: always;
+    }
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 30px 20px;
+    }
+
+    .cv-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Modal Refonte Graphique */
+.redesign-modal, .modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.redesign-modal.active, .modal.active {
+    display: flex;
+}
+
+.redesign-modal-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 1000px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.redesign-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: #6b7280;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.redesign-close:hover {
+    color: #10b981;
+}
+
+/* Tabs navigation */
+.redesign-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e5e7eb;
+    flex-wrap: wrap;
+}
+
+.redesign-tab {
+    background: transparent;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s;
+}
+
+.redesign-tab:hover {
+    color: #10b981;
+}
+
+.redesign-tab.active {
+    color: #10b981;
+    border-bottom-color: #10b981;
+}
+
+/* Pages container */
+.redesign-pages {
+    position: relative;
+}
+
+.redesign-page {
+    display: none;
+}
+
+.redesign-page.active {
+    display: block;
+}
+
+.redesign-page h3 {
+    color: #1f2937;
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Before/After Container */
+.before-after-container {
+   position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.before-after-wrapper {
+    position: relative;
+    width: 100%;
+    height: 500px; /* HAUTEUR VISIBLE */
+    overflow-y: auto; /* SCROLL VERTICAL */
+    overflow-x: hidden;
+    border-radius: 10px;
+    background: #f8f9fa;
+    /* On enlève display inline-block qui cassait tout */
+    display: block; 
+    cursor: grab;
+}
+
+.before-after-inner {
+    position: relative;
+    width: 100%;
+    /* On force la hauteur ici, sinon les images absolutes s'écrasent */
+    /* La hauteur sera définie par JS */
+    min-height: 500px;
+}
+
+.before-after-wrapper:active {
+    cursor: grabbing;
+}
+
+
+.image-before, .image-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none; /* Laisse passer les clics pour le slider */
+}
+
+.image-before {
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+}
+.image-after {
+    z-index: 1;
+}
+
+
+/* Slider Handle */
+.slider-handle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%; /* Prend 100% de .before-after-inner */
+    background: #10b981;
+    z-index: 10;
+    transform: translateX(-2px);
+    pointer-events: none;
+}
+
+.slider-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: white;
+    transform: translateX(-1px);
+}
+
+.slider-button {
+    position: sticky;
+    top: 250px; /* Centre vertical de la vue (500px / 2) */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px; height: 40px;
+    background: #10b981; border: 3px solid white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 18px; pointer-events: auto;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.slider-handle, .slider-button {
+    cursor: ew-resize; /* Flèche double */
+}
+
+/* Scrollbar custom */
+.before-after-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.before-after-wrapper::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.before-after-wrapper::-webkit-scrollbar-thumb {
+    background: #10b981;
+    border-radius: 10px;
+}
+
+/* Labels */
+.before-after-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #6b7280;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .redesign-modal-content {
+        padding: 25px 15px;
+    }
+
+    .before-after-wrapper {
+        height: 300px;
+    }
+
+    .redesign-tabs {
+        flex-direction: column;
+    }
+
+    .redesign-tab {
+        width: 100%;
+        text-align: left;
+    }
+}

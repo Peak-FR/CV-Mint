@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pierrick Manroubia - CV MINT Bikes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="controls">
+            <button class="flip-button" onclick="flipPage()">
+                <span id="flip-text">📄 Voir la lettre de motivation</span>
+            </button>
+            <button class="print-button" onclick="window.print()">🖨️ Imprimer / PDF</button>
+        </div>
+
+        <div class="flip-container" id="flipContainer">
+            <!-- CV (Front) -->
+            <div class="page">
+                <div class="cv-header">
+                    <div class="photo-container">
+                        <div class="photo-placeholder">
+                            <!-- Remplace par : <img src="ta-photo.jpg" alt="Pierrick Manroubia"> -->
+                            PM
+                        </div>
+                    </div>
+                    <div class="header-info">
+                        <h1>Pierrick Manroubia</h1>
+                        <h2>Responsable Site E-Commerce & Optimisation Parcours Client</h2>
+                        <div class="contact-info">
+                            <span>📍 Marseille</span>
+                            <span>📧 pierrick.manroubia@email.com</span>
+                            <span>📱 06 XX XX XX XX</span>
+                            <span>🔗 linkedin.com/in/pierrick-manroubia-048614128</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Profil exécutif</h3>
+                    <p>Gestionnaire d'e-commerce opérationnel avec 3+ ans d'autonomie complète sur site B2C volumineux
+                        (3 280 produits, 6 460 variantes, 8 663 emplacements). Spécialiste de l'optimisation parcours
+                        client et conversion en environnement réglementé : 1,2 M utilisateurs 2025, 1,83 M sessions (61
+                        % organique), <strong>18,3 % taux conversion</strong> (vs 2-3 % moyenne FR).</p>
+                    <p>Motivé par les défis techniques (Python, HTML/CSS/JS, Figma) et l'IA pour accélérer process.
+                        Passionné de mobilité et VTT (héritage familial cycliste Morelon). En apprentissage actif sur
+                        Shopify et stack moderna pour accompagner croissance type startup.</p>
+                </div>
+
+                <div class="section">
+                    <h3>Expériences professionnelles</h3>
+                    <div class="experience-item">
+                        <h4>Webmarketeur – Pilotage site e-commerce</h4>
+                        <div class="meta">e-liquide-fr.com, Marseille | Depuis 20XX</div>
+                        <ul>
+                            <li><strong>Gestion complète site :</strong> 3 280 fiches produits (6 460 variantes),
+                                catalogue, visuels, UX. Collaboration Figma avec graphistes pour intégration maquettes.
+                            </li>
+                            <li><strong>Performance data-driven :</strong> GA4 + Semrush → 18,3 % conversion, 1,83 M
+                                sessions (61 % organique). Secteur réglementé strict.</li>
+                            <li><strong>Emailing :</strong> 62 newsletters 2025 (28 % ouverture, 1,86 % clics). A/B
+                                testing redesign.</li>
+                            <li><strong>Refonte UX 2025 :</strong> Modernisation home, listings, fiches → résilience CA.
+                            </li>
+                            <li><strong>Support logistique :</strong> Aide pics commandes/stock, optimisation picking.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Projets techniques & initiatives</h3>
+                    <ul>
+                        <li><strong>Outil Python gestion stock :</strong> 8 663 emplacements, réduction erreurs,
+                            visibilité améliorée.</li>
+                        <li><strong>Comparateur prix concurrents :</strong> Scraping Python temps réel pour veille
+                            stratégique.</li>
+                        <li><strong>Refonte graphique 2025 :</strong> Modernisation complète UI/UX (voir portfolio).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="portfolio-section">
+                    <h3>📊 Portfolio & Résultats</h3>
+                    <p style="color: #4b5563; margin-bottom: 15px;">Captures d'écran de mes performances e-commerce et
+                        analytics :</p>
+                    <div class="screenshots-grid">
+                        <div class="screenshot-item">
+                            <img src="images/KPI_Brevo.webp" alt="Campagnes emailing" onclick="openModal(this.src)">
+                            <p>Campagnes emailing 2025<br>62 newsletters, 28% ouverture</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/KPI_Oxatis.webp" alt="Tunnel conversion" onclick="openModal(this.src)">
+                            <p>Tunnel de conversion<br>18,3% taux conversion</p>
+                        </div>
+                        <div class="screenshot-item">
+                            <img src="images/KPI_Analytics.webp" alt="Analytics GA4" onclick="openModal(this.src)">
+                            <p>Analytics GA4 2025<br>1,83M sessions, 61% organique</p>
+                        </div>
+                        <!-- Nouvelle card pour avant/après -->
+                        <div class="screenshot-item" onclick="openRedesignModal()"
+                            style="cursor: pointer; background: linear-gradient(135deg, #10b981, #059669); color: white;">
+                            <div style="padding: 40px 20px; text-align: center;">
+                                <div style="font-size: 40px; margin-bottom: 15px;">🎨</div>
+                                <p style="color: white; font-weight: bold; margin: 0;">Refonte Graphique 2025</p>
+                                <p style="color: white; font-size: 13px; margin-top: 10px;">Voir avant/après →</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Compétences techniques</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <strong>E-Commerce</strong>
+                            <span>Oxatis expert, PrestaShop, Shopify motivé</span>
+                        </div>
+                        <div class="skill-item">
+                            <strong>Analytics & Data</strong>
+                            <span>GA4, Semrush, KPIs, test & learn</span>
+                        </div>
+                        <div class="skill-item">
+                            <strong>Développement</strong>
+                            <span>Python, HTML/CSS/JS, BDD</span>
+                        </div>
+                        <div class="skill-item">
+                            <strong>UX/Design</strong>
+                            <span>Figma intégration, wireframing, refontes</span>
+                        </div>
+                        <div class="skill-item">
+                            <strong>IA & Optimisation</strong>
+                            <span>IA quotidienne (SEO, copywriting, data)</span>
+                        </div>
+                        <div class="skill-item">
+                            <strong>Collaboration</strong>
+                            <span>Support logistique, devs, équipes cross</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3>Passions & Intérêts</h3>
+                    <p>VTT régulier (1-2 sorties/mois), héritage familial cyclisme (Morelon, piste), économie circulaire
+                        & mobilité durable, IA dans stratégie business.</p>
+                </div>
+            </div>
+
+            <!-- Lettre (Back) -->
+            <div class="page page-back">
+                <div class="letter-header">
+                    <h1>Lettre de motivation</h1>
+                    <div style="margin-bottom: 20px;">
+                        <p><strong>Pierrick Manroubia</strong><br>
+                            Marseille<br>
+                            pierrick.manroubia@email.com<br>
+                            06 XX XX XX XX</p>
+                    </div>
+                    <div style="margin: 30px 0;">
+                        <p><strong>MINT Bikes</strong><br>
+                            À l'attention du DG Business / CRO<br>
+                            Aix-en-Provence</p>
+                    </div>
+                    <div class="letter-date">
+                        Le 15 janvier 2026
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <strong style="color: #10b981; font-size: 18px;">Objet : Faire de mint-bikes.com votre premier
+                        vendeur – 5 000 vélos ensemble</strong>
+                </div>
+
+                <div class="letter-content">
+                    <p>Madame, Monsieur,</p>
+
+                    <p>Votre parcours chez MINT Bikes m'enthousiasme vraiment : créée en 2021, levée de 3 M€ pour
+                        industrialiser le reconditionné haut de gamme, et ambition de leader européen avec 5 000 vélos
+                        en 2026. J'adore cette mission qui sauve 170 kg de CO₂ par vélo, rend accessible Trek ou Scott à
+                        prix doux, et digitalise tout avec Shopify. Avec mon héritage cycliste (famille Morelon, piste)
+                        et mes sorties VTT, je vois parfaitement comment faire de votre site <strong>votre canal
+                            n°1</strong>.</p>
+
+                    <p>Aujourd'hui chez e-liquide-fr.com, je m'occupe du site de A à Z sous supervision du Directeur
+                        Marketing : 3 280 produits (6 460 variantes), fiches, catalogue, visuels. Même contraint par la
+                        réglementation vape, on atteint <strong>1,2 M utilisateurs 2025, 1,83 M sessions (61 % organique
+                            via Semrush), et 18,3 % conversion</strong> – un vrai levier business. J'anime 62
+                        newsletters (28 % ouverture), aide en logistique lors des pics, et ai refait l'UX en 2025. Je
+                        travaille avec Figma pour intégrer les maquettes graphistes, mais Oxatis freine mes idées de
+                        tunnel fluide et UI moderne.</p>
+
+                    <p><strong>Ce que j'imagine ensemble chez MINT</strong> : partir de votre Shopify pour simplifier
+                        les parcours ("quasi 1 clic"), intégrer mes outils Python/IA (comme mon gestionnaire stock 8 663
+                        emplacements), tester A/B pour exploser leads/conversion, et scaler le catalogue vers l'Europe.
+                        Pas expert Figma/roadmap senior encore, mais mon autonomie + appétit geek (GA4, HTML/CSS/JS) me
+                        permettront d'accélérer vite sur vos KPIs (CPL, marge, ROI).</p>
+
+                    <p>Disponible pour Aix-en-Provence (1 jour télétravail ok), je vise <strong>40–45 k€ +
+                            variable</strong>, conscient de mon profil opérationnel solide. Captures GA4 jointes pour
+                        les preuves concrètes.</p>
+
+                    <p>Hâte de discuter comment on fait grandir mint-bikes.com ensemble !</p>
+                </div>
+
+                <div class="letter-signature">
+                    <p>Bien cordialement,<br>
+                        <strong>Pierrick Manroubia</strong>
+                    </p>
+                </div>
+
+                <div
+                    style="margin-top: 30px; padding: 20px; background: #f0fdf4; border-left: 4px solid #10b981; border-radius: 8px;">
+                    <p style="margin: 0; font-style: italic; color: #059669;"><strong>P.S. :</strong> Votre focus
+                        "simple & stupide mais très bien fait" résonne avec ma débrouille Oxatis – imaginez ça sur
+                        Shopify pour vos 5 000 vélos ! 🚴</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="redesign-modal" id="redesignModal">
+        <div class="redesign-modal-content">
+            <span class="redesign-close" onclick="closeRedesignModal()">&times;</span>
+
+            <h2 style="color: #10b981; margin-bottom: 30px; text-align: center;">🎨 Refonte Graphique e-liquide-fr.com
+                2025</h2>
+
+            <!-- Navigation entre pages -->
+            <div class="redesign-tabs">
+                <button class="redesign-tab active" onclick="showRedesignPage('home')">🏠 Page d'accueil</button>
+                <button class="redesign-tab" onclick="showRedesignPage('listing')">📋 Listing produits</button>
+                <button class="redesign-tab" onclick="showRedesignPage('product')">🛍️ Fiche produit</button>
+            </div>
+
+            <!-- Conteneur avant/après -->
+            <div class="redesign-pages">
+                <!-- Page d'accueil -->
+                <div class="redesign-page active" id="page-home">
+                    <h3>Page d'accueil</h3>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <div class="before-after-inner">
+                                <img src="images/home_after.webp" alt="Après" class="image-after">
+                                <img src="images/home_before.webp" alt="Avant" class="image-before">
+                                <div class="slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button">⟷</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="before-after-labels">
+                            <span>← AVANT (2024)</span>
+                            <span>APRÈS (2025) →</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listing produits -->
+                <div class="redesign-page" id="page-listing">
+                    <h3>Listing produits</h3>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <div class="before-after-inner">
+                                <img src="images/listing_after.webp" alt="Après" class="image-after">
+                                <img src="images/listing_before.webp" alt="Avant" class="image-before">
+                                <div class="slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button">⟷</div>
+                                </div>
+                            </div>
+                            <div class="before-after-labels">
+                                <span>← AVANT (2024)</span>
+                                <span>APRÈS (2025) →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fiche produit -->
+                <div class="redesign-page" id="page-product">
+                    <h3>Fiche produit</h3>
+                    <div class="before-after-container">
+                        <div class="before-after-wrapper">
+                            <div class="before-after-inner">
+                                <img src="images/product_after.webp" alt="Après" class="image-after">
+                                <img src="images/product_after.webp" alt="Avant" class="image-before">
+                                <div class="slider-handle">
+                                    <div class="slider-line"></div>
+                                    <div class="slider-button">⟷</div>
+                                </div>
+                            </div>
+                            <div class="before-after-labels">
+                                <span>← AVANT (2024)</span>
+                                <span>APRÈS (2025) →</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal pour agrandir images -->
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImage" src="">
+    </div>
+
+    <script src="flip_page.js"></script>
+    <script src="popup.js"></script>
+</body>
+
+</html>
