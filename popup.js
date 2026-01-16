@@ -47,7 +47,7 @@ function closeRedesignModal() {
     const modal = document.getElementById('redesignModal');
     if(modal) {
         modal.classList.remove('active');
-        setTimeout(() => modal.style.display = "none", 300);
+        setTimeout(() => modal.style.display = "none", 10);
         document.body.style.overflow = 'auto'; // Débloque scroll
     }
 }
@@ -169,3 +169,44 @@ document.addEventListener('keydown', (e) => {
         closeRedesignModal();
     }
 });
+
+/* =========================================
+   5. MODAL INTEGRATIONS
+   ========================================= */
+function openEmbeedModal() {
+    const modalemb = document.getElementById('embeedModal');
+    if(modalemb) {
+        modalemb.style.display = "flex";
+        setTimeout(() => modalemb.classList.add('active'), 10);
+        document.body.style.overflow = 'hidden'; // Bloque scroll body
+            }
+}
+
+function closeEmbeedModal() {
+    const modalemb = document.getElementById('embeedModal');
+    if(modalemb) {
+        modalemb.classList.remove('active');
+        setTimeout(() => modalemb.style.display = "none", 10);
+        document.body.style.overflow = 'auto'; // Débloque scroll
+    }
+}
+
+// Navigation Tabs (Home / Listing / Product)
+function showEmbeedPage(pageId) {
+    // Reset tabs
+    document.querySelectorAll('.embeed-tab').forEach(t => t.classList.remove('active'));
+    // Reset pages
+    document.querySelectorAll('.embeed-page').forEach(p => p.classList.remove('active'));
+
+    // Active clicked tab & page
+    // Cherche le bouton correspondant au texte ou ID (plus robuste)
+    const targetTab = Array.from(document.querySelectorAll('.embeed-tab')).find(btn =>
+        btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(pageId)
+    );
+    if(targetTab) targetTab.classList.add('active');
+
+    const targetPage = document.getElementById('page-' + pageId);
+    if(targetPage) {
+        targetPage.classList.add('active');
+    }
+}
